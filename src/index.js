@@ -34,6 +34,9 @@ module.exports = getFilter;
 // Set user-specified default format for date
 module.exports.setDefaultFormat = format => (defaultFormat = format);
 
+// Set user-specified locale for date
+module.exports.setLocale = locale => {moment.locale(locale)};
+
 // Add filter to nunjucks environment
 module.exports.install = (env, customName) => {
   env.addFilter(customName || 'date', getFilter);
